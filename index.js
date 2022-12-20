@@ -1,12 +1,10 @@
-function changeNumber(n) {
-  var result = [];
-  n.map(function (a) {
-    if (typeof a === 'string') {
-      result.push(Number(a));
-    } else {
-      result.push(a);
-    }
-  });
-  return result;
-}
-console.log(changeNumber(['1', 2, '3']));
+var friend = {
+    name: 'Ember',
+};
+var position = { x: 30, y: 20 };
+var signin = {
+    name: 'Kim',
+    phone: 123,
+    email: 'jun@gmail.com',
+    adult: true,
+};
