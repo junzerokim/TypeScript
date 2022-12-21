@@ -1,36 +1,20 @@
-type Girlfriend = {
-  name: string;
-  age?: number;
+type CutType = (x: string) => string;
+
+let cutZero: CutType = function (x) {
+  return x.replace(/^0+/, '');
 };
 
-const friend: Girlfriend = {
-  name: 'Ember',
-};
+function removeDash(x: string): number {
+  return Number(x.replace(/-/g, ''));
+}
 
-type Name = string;
-type Age = number;
-type Person = Name | Age;
+type func1 = (a: string) => string;
+type func2 = (a: string) => number;
 
-type PositionX = { x: number };
-type PositionY = { y: number };
+function answer(a: string, b: func1, c: func2) {
+  let firstCalc = b(a);
+  let result = c(firstCalc);
+  return result;
+}
 
-type NewType = PositionX & PositionY;
-
-let position: NewType = { x: 30, y: 20 };
-
-type User = {
-  name: string;
-  phone: number;
-  email?: string;
-};
-
-type Adult = { adult: boolean };
-
-type NewUser = User & Adult;
-
-let signin: NewUser = {
-  name: 'Kim',
-  phone: 123,
-  email: 'jun@gmail.com',
-  adult: true,
-};
+console.log(answer('010-1234-5678', cutZero, removeDash));

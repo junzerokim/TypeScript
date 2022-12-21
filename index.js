@@ -1,10 +1,12 @@
-var friend = {
-    name: 'Ember',
+var cutZero = function (x) {
+  return x.replace(/^0+/, '');
 };
-var position = { x: 30, y: 20 };
-var signin = {
-    name: 'Kim',
-    phone: 123,
-    email: 'jun@gmail.com',
-    adult: true,
-};
+function removeDash(x) {
+  return Number(x.replace(/-/g, ''));
+}
+function answer(a, b, c) {
+  var firstCalc = b(a);
+  var result = c(firstCalc);
+  return result;
+}
+console.log(answer('010-9747-9738', cutZero, removeDash));
