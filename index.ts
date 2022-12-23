@@ -1,23 +1,9 @@
-class Square {
-  constructor(public width: number, public height: number, public color: string) {}
-  draw() {
-    let a = Math.random();
-    let square = `<div style="position: relative;
-    top:${a * 400}px;
-    left:${a * 400}px;
-    width:${this.width}px;
-    height:${this.height}px;
-    background:${this.color}";
-    ></div>`;
-    document.body.insertAdjacentHTML('beforeend', square);
+class Person<T> {
+  name;
+  constructor(a: T) {
+    this.name = a;
   }
 }
 
-let 네모 = new Square(30, 30, 'navy');
-네모.draw();
-네모.draw();
-네모.draw();
-네모.draw();
-네모.draw();
-네모.draw();
-네모.draw();
+let a = new Person<string>('hello');
+console.log(typeof a.name);
