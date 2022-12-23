@@ -1,20 +1,23 @@
-type CutType = (x: string) => string;
-
-let cutZero: CutType = function (x) {
-  return x.replace(/^0+/, '');
-};
-
-function removeDash(x: string): number {
-  return Number(x.replace(/-/g, ''));
+class Square {
+  constructor(public width: number, public height: number, public color: string) {}
+  draw() {
+    let a = Math.random();
+    let square = `<div style="position: relative;
+    top:${a * 400}px;
+    left:${a * 400}px;
+    width:${this.width}px;
+    height:${this.height}px;
+    background:${this.color}";
+    ></div>`;
+    document.body.insertAdjacentHTML('beforeend', square);
+  }
 }
 
-type func1 = (a: string) => string;
-type func2 = (a: string) => number;
-
-function answer(a: string, b: func1, c: func2) {
-  let firstCalc = b(a);
-  let result = c(firstCalc);
-  return result;
-}
-
-console.log(answer('010-1234-5678', cutZero, removeDash));
+let 네모 = new Square(30, 30, 'navy');
+네모.draw();
+네모.draw();
+네모.draw();
+네모.draw();
+네모.draw();
+네모.draw();
+네모.draw();
